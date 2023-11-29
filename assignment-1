@@ -1,0 +1,65 @@
+# Initialize an empty list to store the numbers
+numbers = []
+
+# Loop through the range from 2000 to 3200 (inclusive)
+for i in range(2000, 3201):
+    # Check if the number is divisible by 7 and not a multiple of 5
+    if i % 7 == 0 and i % 5 != 0:
+        # Append the number to the list
+        numbers.append(str(i))
+
+# Print the numbers in a comma-separated sequence on a single line
+print(','.join(numbers))
+
+#Problem 2
+# Function to calculate factorial
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# List of numbers for which factorial needs to be calculated
+numbers = [3, 5, 7, 9, 10]
+
+# Calculate factorial for each number and store the results in a list
+factorial_results = [factorial(num) for num in numbers]
+
+# Print the factorial results in a comma-separated sequence on a single line
+print(','.join(map(str, factorial_results)))
+
+#Problem 3
+# Function to generate the dictionary of (i, i*i) pairs for numbers from 1 to n
+def generate_squared_dict(n):
+    squared_dict = {}  # Initialize an empty dictionary
+
+    # Generate (i, i*i) pairs for numbers from 1 to n
+    for i in range(1, n + 1):
+        squared_dict[i] = i * i  # Assign i as the key and i*i as the value in the dictionary
+
+    return squared_dict  # Return the generated dictionary
+
+# Input the value of n
+n = int(input("Enter a number (n): "))
+
+# Generate the dictionary using the function
+result_dict = generate_squared_dict(n)
+
+# Print the generated dictionary
+print("Generated Dictionary:")
+print(result_dict)
+
+#Problem4
+# Accept the input sequence of comma-separated numbers from the console
+input_sequence = input("Enter a sequence of comma-separated numbers: ")
+
+# Split the input sequence using the comma as the delimiter and convert it into a list of numbers
+numbers_list = input_sequence.split(',')
+numbers_list = [int(num) for num in numbers_list]  # Convert strings to integers
+
+# Create a tuple from the generated list of numbers
+numbers_tuple = tuple(numbers_list)
+
+# Print the list and tuple containing the numbers
+print("List of numbers:", numbers_list)
+print("Tuple of numbers:", numbers_tuple)
